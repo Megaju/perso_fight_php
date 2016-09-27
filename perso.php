@@ -34,7 +34,7 @@
             echo '<h2>Attaque :</h2>';
             echo '<div><p><b class="red">' . $this->_name . '</b> attaque <b class="blue">' . $persoQuiSubit->_name . '</b> !</p>';
             $persoQuiSubit->_life -= $this->_force - $persoQuiSubit->_defense;
-            echo '<p>Il reste ' . $persoQuiSubit->_life . ' PV à ' . $persoQuiSubit->_name . ' !</p></div>';
+            echo '<p><b class="green">Il reste ' . $persoQuiSubit->_life . ' PV à ' . $persoQuiSubit->_name . ' !</b></p></div>';
             // gestion de la contre-attaque
             $ca = rand(1, 3);
             if ($ca === 3) {
@@ -48,7 +48,7 @@
             echo '<h2>Contre-attaque :</h2>';
             echo '<div><p><b class="red">' . $this->_name . '</b> contre-attaque <b class="blue">' . $persoQuiSubit->_name . '</b> !</p>';
             $persoQuiSubit->_life -= $this->_force - $persoQuiSubit->_defense;
-            echo '<p>Il reste ' . $persoQuiSubit->_life . ' PV à ' . $persoQuiSubit->_name . ' !</p></div>';
+            echo '<p><b class="green">Il reste ' . $persoQuiSubit->_life . ' PV à ' . $persoQuiSubit->_name . ' !</b></p></div>';
         }
         
         
