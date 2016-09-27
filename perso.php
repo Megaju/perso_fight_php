@@ -32,9 +32,9 @@
         // Un personnage va attaquer un autre personnage
         public function attaque($persoQuiSubit) {
             echo '<h2>Attaque :</h2>';
-            echo '<p><b class="red">' . $this->_name . '</b> attaque <b class="blue">' . $persoQuiSubit->_name . '</b> !</p>';
+            echo '<div><p><b class="red">' . $this->_name . '</b> attaque <b class="blue">' . $persoQuiSubit->_name . '</b> !</p>';
             $persoQuiSubit->_life -= $this->_force - $persoQuiSubit->_defense;
-            echo '<p>Il reste ' . $persoQuiSubit->_life . ' PV à ' . $persoQuiSubit->_name . ' !</p>';
+            echo '<p>Il reste ' . $persoQuiSubit->_life . ' PV à ' . $persoQuiSubit->_name . ' !</p></div>';
             // gestion de la contre-attaque
             $ca = rand(1, 3);
             if ($ca === 3) {
@@ -46,9 +46,9 @@
             // X = agilité du perso (mais pour le moment on dira 1 chance sur 3)
         public function contreAttaque($persoQuiSubit) {
             echo '<h2>Contre-attaque :</h2>';
-            echo '<p><b class="red">' . $this->_name . '</b> contre-attaque <b class="blue">' . $persoQuiSubit->_name . '</b> !</p>';
+            echo '<div><p><b class="red">' . $this->_name . '</b> contre-attaque <b class="blue">' . $persoQuiSubit->_name . '</b> !</p>';
             $persoQuiSubit->_life -= $this->_force - $persoQuiSubit->_defense;
-            echo '<p>Il reste ' . $persoQuiSubit->_life . ' PV à ' . $persoQuiSubit->_name . ' !</p>';
+            echo '<p>Il reste ' . $persoQuiSubit->_life . ' PV à ' . $persoQuiSubit->_name . ' !</p></div>';
         }
         
         

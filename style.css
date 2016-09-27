@@ -20,13 +20,21 @@ h3 {
     margin-bottom: -25px;
 }
 
-p, ol, li {
+div, p, ol, li {
     width: 60%;
     margin: 50px auto;
     padding: 25px 0;
     border: 3px solid #111;
     background-color: #222;
     color: #eee;
+}
+
+div {
+    background-color: #444;
+}
+
+div p, div ol, div li {
+    width: 90%;
 }
 
 li {
