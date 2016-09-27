@@ -31,14 +31,19 @@
         
         // Un personnage va attaquer un autre personnage
         public function attaque($persoQuiSubit) {
+            // initialisation de l'attaquant pour la fonction de l'éventuel contre-attaque
+            $attaquant = $this->_name;
+            
+            // l'attaque
             echo '<h2>Attaque :</h2>';
             echo '<div><p><b class="red">' . $this->_name . '</b> attaque <b class="blue">' . $persoQuiSubit->_name . '</b> !</p>';
             $persoQuiSubit->_life -= $this->_force - $persoQuiSubit->_defense;
             echo '<p><b class="green">Il reste ' . $persoQuiSubit->_life . ' PV à ' . $persoQuiSubit->_name . ' !</b></p></div>';
+            
             // gestion de la contre-attaque
             $ca = rand(1, 3);
             if ($ca === 3) {
-                $persoQuiSubit->contreAttaque($this->_name);
+                $persoQuiSubit->contreAttaque($attaquant);
             }
         }
         
