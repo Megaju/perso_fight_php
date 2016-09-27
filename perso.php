@@ -25,25 +25,27 @@
         // Le personnage se présente
         public function sePresente() {
             echo '<h2>Présentation de ' . $this->_name . ' : </h2>';
-            echo '</p>Bonjour je suis <i>' . $this->_name . '</i> j’habites à <i>' . $this->_localisation . '</i>. On dis de moi que je suis une personne plutôt <i>' . $this->_caractere . '</i> !</p>';
+            echo '<p>Bonjour je suis <i>' . $this->_name . '</i> j’habites à <i>' . $this->_localisation . '</i>. On dis de moi que je suis une personne plutôt <i>' . $this->_caractere . '</i> !</p>';
             echo '<p>J’ai ' . $this->_life . ' points de vie ' . $this->_force . ' de force et ' . $this ->_defense . ' en défense.</p>';
         }
         
         // Un personnage va attaquer un autre personnage
         public function attaque($persoQuiSubit) {
             echo '<h2>Attaque :</h2>';
-            echo '<p><bold>' . $this->_name . ' attaque ' . $persoQuiSubit->_name . ' !</bold></p>';
+            echo '<p><b class="red">' . $this->_name . '</b> attaque <b class="blue">' . $persoQuiSubit->_name . '</b> !</p>';
             $persoQuiSubit->_life -= $this->_force - $persoQuiSubit->_defense;
             echo '<p>Il reste ' . $persoQuiSubit->_life . ' PV à ' . $persoQuiSubit->_name . ' !</p>';
             $ca = rand(1, 3);
-            echo $ca;
+            if ($ca = 3) {
+                $persoQuiSubit->contreAttaque($this->_name);
+            }
         }
         
         // Système de contre-attaque qui a X chance de se lancer après une attaque
             // X = agilité du perso (mais pour le moment on dira 1 chance sur 3)
         public function contreAttaque($persoQuiSubit) {
             echo '<h2>Contre-attaque :</h2>';
-            echo '<p><bold>' . $this->_name . ' contre-attaque ' . $persoQuiSubit->_name . ' !</bold></p>';
+            echo '<p><b class="red">' . $this->_name . '</b> contre-attaque <b class="blue">' . $persoQuiSubit->_name . '</b> !</p>';
             $persoQuiSubit->_life -= $this->_force - $persoQuiSubit->_defense;
             echo '<p>Il reste ' . $persoQuiSubit->_life . ' PV à ' . $persoQuiSubit->_name . ' !</p>';
         }
@@ -67,7 +69,7 @@
             $emeraude->attaque($julien);
         }
         else {
-            echo "<p class='fatality'>Ju wins, FATALITYYYY!</p>";
+            echo "<p class='big-text'>Ju wins, FATALITYYYY!</p>";
         }
     }
     echo '</section>';
