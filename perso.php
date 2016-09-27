@@ -37,7 +37,7 @@
             echo '<p>Il reste ' . $persoQuiSubit->_life . ' PV à ' . $persoQuiSubit->_name . ' !</p>';
             // gestion de la contre-attaque
             $ca = rand(1, 3);
-            if ($ca = 3) {
+            if ($ca === 3) {
                 $persoQuiSubit->contreAttaque($this->_name);
             }
         }
