@@ -31,7 +31,7 @@
         
         // Un personnage va attaquer un autre personnage
         public function attaque($persoQuiSubit) {
-            // initialisation de l'attaquant pour la fonction de l'éventuel contre-attaque
+            // initialisation de l'attaquant pour la fonction de l'éventuel contre-attaque.
             $attaquant = $this->_name;
             
             // l'attaque
