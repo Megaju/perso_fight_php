@@ -35,6 +35,7 @@
             echo '<p><b class="red">' . $this->_name . '</b> attaque <b class="blue">' . $persoQuiSubit->_name . '</b> !</p>';
             $persoQuiSubit->_life -= $this->_force - $persoQuiSubit->_defense;
             echo '<p>Il reste ' . $persoQuiSubit->_life . ' PV à ' . $persoQuiSubit->_name . ' !</p>';
+            // gestion de la contre-attaque
             $ca = rand(1, 3);
             if ($ca = 3) {
                 $persoQuiSubit->contreAttaque($this->_name);
@@ -62,7 +63,7 @@
     $emeraude->sePresente();
 
     // Et là Julien va attaquer Emeraude ! ! ! FIGHT ! ! !
-    echo '<section><h3>COMBAT À MOOOOOOOOOOOOOOOORT ! ! ! !</h3>';
+    echo '<h3>COMBAT À MOOOOOOOOOOOOOOOORT ! ! ! !</h3>';
     while ($julien->_life > 0 and $emeraude->_life > 0) {
         $julien->attaque($emeraude);
         if ($emeraude->_life > 0) {
@@ -72,7 +73,6 @@
             echo "<p class='big-text'>Ju wins, FATALITYYYY!</p>";
         }
     }
-    echo '</section>';
 
     include ('footer.php');
     
