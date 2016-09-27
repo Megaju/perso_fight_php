@@ -3,10 +3,11 @@
 
     // PERSONNAGE
     class Personnage {
+        public $_life;
+        
         private $_name;
         private $_localisation;
         private $_caractere;
-        public $_life;
         private $_force;
         private $_defense;
         private $_agility;
@@ -34,9 +35,18 @@
             echo '<p><bold>' . $this->_name . ' attaque ' . $persoQuiSubit->_name . ' !</bold></p>';
             $persoQuiSubit->_life -= $this->_force - $persoQuiSubit->_defense;
             echo '<p>Il reste ' . $persoQuiSubit->_life . ' PV à ' . $persoQuiSubit->_name . ' !</p>';
+            $ca = rand(1, 3);
+            echo $ca;
         }
         
         // Système de contre-attaque qui a X chance de se lancer après une attaque
+            // X = agilité du perso (mais pour le moment on dira 1 chance sur 3)
+        public function contreAttaque($persoQuiSubit) {
+            echo '<h2>Contre-attaque :</h2>';
+            echo '<p><bold>' . $this->_name . ' contre-attaque ' . $persoQuiSubit->_name . ' !</bold></p>';
+            $persoQuiSubit->_life -= $this->_force - $persoQuiSubit->_defense;
+            echo '<p>Il reste ' . $persoQuiSubit->_life . ' PV à ' . $persoQuiSubit->_name . ' !</p>';
+        }
         
         
     }
